@@ -13,6 +13,7 @@ let g:netrw_browse_split = 3
 let g:netrw_altv = 1
 let g:netrw_preview = 1
 let g:netrw_winsize = 25
+let g:netrw_sort_by="exten"
 autocmd FileType netrw setl bufhidden=delete
 set scrolloff=12
 set nocompatible
