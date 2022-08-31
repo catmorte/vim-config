@@ -1,3 +1,7 @@
+set ts=2
+set sts=2
+set sw=2
+set fdm=indent
 colorscheme desert
 colorscheme monokai
 set list
@@ -16,3 +20,4 @@ set path+=**
 set wildmenu
 set clipboard=
 set number relativenumber
+set listchars=tab:→\ 
