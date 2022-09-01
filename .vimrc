@@ -6,7 +6,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
-let g:gitgutter_git_executable = 'C:\Program Files\Git\bin\git.exe'
+let g:gitgutter_git_executable = '<PATH TO GIT BINARY>'
 let g:rainbow_active = 1
 set laststatus=2
 set ts=2
