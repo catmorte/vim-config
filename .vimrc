@@ -1,3 +1,14 @@
+call plug#begin('!/.vim/plugged')
+Plug 'frazrepo/vim-rainbow'
+Plug 'chun-yang/auto-pairs'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
+call plug#end()
+
+let g:gitgutter_git_executable = 'C:\Program Files\Git\bin\git.exe'
+let g:rainbow_active = 1
+set laststatus=2
 set ts=2
 set sts=2
 set sw=2
