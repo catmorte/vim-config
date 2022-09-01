@@ -21,4 +21,5 @@ set path+=**
 set wildmenu
 set clipboard=
 set number relativenumber
+set noscrollbind
 set listchars=tab:→\ 
