@@ -10,8 +10,9 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'sirver/ultisnips'
 Plug 'vim-scripts/ctrlp.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
-colorscheme desert
+colorscheme dracula
 let g:gitgutter_git_executable = 'C:\Program Files\Git\bin\git.exe'
 let g:rainbow_active = 1
 set laststatus=2
