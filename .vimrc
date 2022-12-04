@@ -13,6 +13,7 @@ Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-git-status.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 set laststatus=2
 set ts=2
@@ -22,6 +23,7 @@ set fdm=indent
 set list
 syntax on
 set mouse=a
+let g:gruvbox_contrast_dark = "medium"
 let g:fern#renderer = "nerdfont"
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
@@ -85,8 +87,14 @@ set clipboard=
 set number relativenumber
 set noscrollbind
 set listchars=tab:→\ 
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_parameters = 1
 set backupdir=~/vimtmp//,.
 set directory=~/vimtmp//,.
 :command! CopyBuffer let @+ = expand('%:p')
@@ -106,6 +114,6 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-colorscheme dracula
+colorscheme gruvbox
 let g:python3_host_prog = 'C:\Users\Raman_Susla\AppData\Local\Programs\Python\Python38\python3.exe'
 lua << EOF require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules", "\!\\.vim\\plugged"} } }
