@@ -97,6 +97,10 @@ let g:go_highlight_fields = 1
 let g:go_highlight_function_parameters = 1
 set backupdir=~/vimtmp//,.
 set directory=~/vimtmp//,.
+
+autocmd FileType go nmap <leader>gc :GoCallers<return>
+autocmd FileType go nmap <leader>gi :GoImplements<return>
+
 :command! CopyBuffer let @+ = expand('%:p')
 nnoremap tn :tabnew<cr>
 if has('nvim')
