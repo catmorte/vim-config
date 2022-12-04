@@ -10,6 +10,9 @@ Plug 'vim-scripts/ctrlp.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/fern-git-status.vim'
 call plug#end()
 set laststatus=2
 set ts=2
@@ -19,6 +22,7 @@ set fdm=indent
 set list
 syntax on
 set mouse=a
+let g:fern#renderer = "nerdfont"
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
 let g:loaded_netrwSettings = 1
@@ -102,6 +106,6 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-" colorscheme dracula
+colorscheme dracula
 let g:python3_host_prog = 'C:\Users\Raman_Susla\AppData\Local\Programs\Python\Python38\python3.exe'
 lua << EOF require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules", "\!\\.vim\\plugged"} } }
