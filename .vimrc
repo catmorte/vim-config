@@ -98,8 +98,8 @@ let g:go_highlight_function_parameters = 1
 set backupdir=~/vimtmp//,.
 set directory=~/vimtmp//,.
 
-autocmd FileType go nmap <leader>gc :GoCallers<return>
-autocmd FileType go nmap <leader>gi :GoImplements<return>
+autocmd FileType go nmap gc :GoCallers<return>
+autocmd FileType go nmap gi :GoImplements<return>
 
 :command! CopyBuffer let @+ = expand('%:p')
 nnoremap tn :tabnew<cr>
