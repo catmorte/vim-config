@@ -15,6 +15,7 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'morhetz/gruvbox'
 call plug#end()
+set shell=powershell
 set laststatus=2
 set ts=2
 set sts=2
