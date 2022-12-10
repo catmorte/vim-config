@@ -14,8 +14,8 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'morhetz/gruvbox'
+Plug 'tyrannicaltoucan/vim-deep-space'
 call plug#end()
-set shell=powershell
 set laststatus=2
 set ts=2
 set sts=2
@@ -36,7 +36,7 @@ augroup my-fern-hijack
   autocmd!
   autocmd BufEnter * ++nested call s:hijack_directory()
 augroup END
-
+:set shell=powershell
 function! s:hijack_directory() abort
   let path = expand('%:p')
   if !isdirectory(path)
@@ -99,7 +99,7 @@ let g:go_highlight_function_parameters = 1
 set backupdir=~/vimtmp//,.
 set directory=~/vimtmp//,.
 
-autocmd FileType go nmap gc :GoCallers<return>
+autocmd FileType go nmap gc <Plug>(go-callers)
 autocmd FileType go nmap gi :GoImplements<return>
 
 :command! CopyBuffer let @+ = expand('%:p')
@@ -119,8 +119,8 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 let g:go_fmt_autosave = 0
-colorscheme gruvbox
+colorscheme deep-space
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
-let g:python3_host_prog = '~\AppData\Local\Programs\Python\Python38\python3.exe'
+let g:python3_host_prog = 'C:\Users\Raman_Susla\AppData\Local\Programs\Python\Python38\python3.exe'
 lua << EOF require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules", "\!\\.vim\\plugged"} } }
