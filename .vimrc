@@ -18,6 +18,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'tpope/vim-commentary'
+Plug 'ap/vim-css-color'
 call plug#end()
 set laststatus=2
 set ts=2
