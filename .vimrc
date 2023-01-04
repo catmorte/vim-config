@@ -1,3 +1,4 @@
+" let &runtimepath.= PATH with absolute prefixes to fix stratup vim outside of homedir
 call plug#begin('!/.vim/plugged')
 Plug 'chun-yang/auto-pairs'
 Plug 'tpope/vim-fugitive'
@@ -15,6 +16,8 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'mtdl9/vim-log-highlighting'
+Plug 'tpope/vim-commentary'
 call plug#end()
 set laststatus=2
 set ts=2
@@ -101,6 +104,7 @@ set directory=~/vimtmp//,.
 
 autocmd FileType go nmap gc <Plug>(go-callers)
 autocmd FileType go nmap gi :GoImplements<return>
+autocmd FileType go nmap gd :GoDef<return>
 
 :command! CopyBuffer let @+ = expand('%:p')
 nnoremap tn :tabnew<cr>
@@ -114,13 +118,14 @@ tnoremap <Esc> <C-\><C-n>
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>ff <cmd>:Telescope find_files find_command=rg,--no-ignore,--files prompt_prefix=🔍 layout_config={"prompt_position":"top"} hidden=true<cr>
+nnoremap <leader>fg <cmd>:Telescope live_grep find_command=rg,--no-ignore prompt_prefix=🔍 layout_config={"prompt_position":"top"} hidden=true<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 let g:go_fmt_autosave = 0
 colorscheme deep-space
+" colorscheme dracula
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 let g:python3_host_prog = 'C:\Users\Raman_Susla\AppData\Local\Programs\Python\Python38\python3.exe'
-lua << EOF require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules", "\!\\.vim\\plugged"} } }
+lua << EOF require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules", "\!\\.vim\\plugged"}, pickers = { find_files = { hidden = true } }} }
